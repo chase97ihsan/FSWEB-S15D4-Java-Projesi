@@ -18,6 +18,11 @@ public class MainStack {
         System.out.println(binaryNumber(13));
         System.out.println(binaryNumber(5));
         System.out.println(binaryNumber(6));
+        System.out.println("---------------------");
+        System.out.println(binaryNumber2(13));
+        System.out.println(binaryNumber2(5));
+        System.out.println(binaryNumber2(6));
+
 
 
     }
@@ -87,6 +92,20 @@ public class MainStack {
          }
          return Integer.parseInt(kalanReverse);
     }
+    public static int binaryNumber2(int decimal) {
+        Stack stack =new Stack<>();
+        int bolum=decimal;
+        String binary="";
 
+        while(bolum>0){
+            stack.push(bolum%2);
+            bolum=bolum/2;
+        }
+        while (!stack.isEmpty()){
+            binary+=stack.pop();
+        }
+        return Integer.parseInt(binary);
+
+    }
 
 }
